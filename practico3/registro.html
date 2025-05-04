@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+</head>
+
+<body>
+
+
+
+<form id="formulario-registro"> <!-- es una etiqueta que se usa para formularios -->
+
+    <label for="nombre">Nombre completo:</label> <!-- etiqueta de texto que le da nombre a un campo y se asocia a un input con el atributo for, que debe coincidir con el id del imput -->
+    <input type="text" id="nombre" name="nombre"> <!-- es un campo de entrada donde el usuario puede escribir datoss -->
+    <br><br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad">
+    <br><br>
+
+    <label for="correo">Correo electronico:</label>
+    <input type="email" id="correo" name="correo">
+    <br><br>
+
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña">
+    <br><br>
+
+    <button type="submit">Registrarse</button>
+
+</form> 
+
+<div id="mensaje" style="color: red; font-weight: bold;"></div>
+
+<!-- aclaracion para mi yo del futuro, al poner input type="number" para la edad o en cualquier cosa en html el navegador puede mostrar un campo numerico, pero cuando se accede a document.getElementById("edad").value, ese valor viene como texto en javaScript por eso se ingresa: const edad = parseInt(document.getElementById("edad").value); -->
+<!-- el script es una etiqueta donde se escribe el codigo javascript dentro del html -->
+<script> 
+
+    const formulario = document.getElementById("formulario-registro"); /*busca en el documento un elemento con id=formulario-registro y lo guarda en la variable llamada formulario*/
+
+    formulario.addEventListener("submit", function(evento) { /*le indica a "formulario" que cuando se haga click en el boton ejecute esa funcion*/
+
+        evento.preventDefault(); /*la funcion ejecutada evita que el formulario recargue la pagina*/
+
+
+        const nombre = document.getElementById("nombre").value;
+        const edad = parseInt(document.getElementById("edad").value);           /*toma los valores ingresados por el usuario*/
+        const correo = document.getElementById("correo").value;
+        const contraseña = document.getElementById("contraseña").value;
+
+
+        if (!nombre || !edad || !correo || !contraseña){
+
+            mostrarError("Ingrese en todos los campos")
+            return ;
+        }
+
+        if (edad < 18) {
+            mostrarError("Debe ser mayor de edad")
+            return;
+
+        }
+
+        if (!correo.includes("@"))  { /*el includes es un metodo de los strings en javaScript, devuelve true si la subcadena esta presente*/
+
+            mostrarError("El correo debe incluir (@)")
+            return;
+        }
+
+
+        if (contraseña.length < 6){ /*el length se usa en javaScript para saber la cantidad de caracteres que tiene un texto o cantidad de elementos que tiene una [lista]*/
+
+            mostrarError("La contraseña debe tener al menos 6 caracteres")
+            return;
+        }
+
+        mostrarExito("!Registro exitoso¡ bienvenido " + nombre)
+        console.log(nombre, edad, correo, contraseña) /*muestra esos datos*/
+
+    });
+
+
+    const mensaje = document.getElementById("mensaje");
+
+    function mostrarError(texto) {
+
+        mensaje.textContent = texto
+        mensaje.style.color = "red";
+
+    }
+
+
+    function mostrarExito(texto) {
+
+        mensaje.textContent = texto;
+        mensaje.style.color = "green";
+
+
+    }
+
+</script>
+
+
+
+
+</body>
+
+</html>

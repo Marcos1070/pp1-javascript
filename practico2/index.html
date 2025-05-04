@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeros 3 practicos</title>
+</head>
+<body>
+    <h1>Trabajo Práctico de JavaScript</h1>
+
+    <button onclick="cargarPractico('practico2.js')">Práctico 2</button>
+
+    <script>
+        function cargarPractico(nombreArchivo) {
+            const scripts = document.querySelectorAll('script[data-practico]');
+            scripts.forEach(script => script.remove()); // borra el script anterior si hay
+
+            const script = document.createElement('script');
+            script.src = nombreArchivo;
+            script.setAttribute('data-practico', 'true');
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
+
