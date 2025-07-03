@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de libros</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+
+<body>
+    <h1>Gestor de libros</h1>
+
+    <label for="titulo">Ingrese el titulo del libro: </label>
+    <input type="text" id="titulo">
+
+    <label for="autor">Ingrese el autor: </label>
+    <input type="text" id="autor">
+
+    <label for="añoPublicacion">Ingrese el año de publicacion: </label>
+    <input type="number" id="añoPublicacion">
+
+    <label for="genero">Ingrese el genero del libro: </label>
+    <select id="genero">
+
+        <option value="aventura">Aventura</option>
+        <option value="fantasia">Fantasia</option>
+        <option value="romance">Romance</option>
+        <option value="drama">Drama</option>
+        <option value="cienciaFiccion">Ciencia Ficcion</option>
+        <option value="otro">Otro</option>
+
+    </select>
+
+    <!--metodo para que el usuario pueda escribir en "otro" en caso de ser otro genero-->
+    <input type="text" id="generoOtro" placeholder="Escriba el genero" style="display: none;">
+
+    <button id="botonIngresar">Ingresar datos</button>
+
+
+    <!--filtro-->
+    <input type="text" id="filtroTitulo" placeholder="Filtrar por titulo">
+    <select id="filtroGenero">
+
+        <option value="todos">Todos los generos</option>
+
+    </select>
+
+
+    <!--boton para ordenar los libros por año-->
+    <button id="botonOrdenar">Ordenar por año</button>
+
+
+    <!--mostrar los libros-->
+    <table id="tablaLibros">
+
+        <thead>
+
+            <tr>
+
+                <th>#</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Genero</th>
+                <th>Acciones</th>
+
+            </tr>
+
+        </thead>
+    
+        <tbody>
+            
+        </tbody>
+
+    </table>
+
+
+    <div id="resumenEstadistico" class="recuadro">
+
+    </div>
+
+
+    <script src="logica.js"></script>
+
+</body>
+
+
+</html>
