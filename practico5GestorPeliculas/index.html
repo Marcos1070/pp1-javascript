@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Peliculas</title>
+</head>
+
+<body>
+    
+<!----------PARTE INICIAL PARA INGRESAR PELICULAS----------------------------------------------->
+
+    <h1>GESTOR DE PELICULAS FAVORITAS</h1>
+
+        <label for="pelicula">Ingrese el nombre de una pelicula: </label>
+        <input type="text" id="pelicula">
+
+        <label for="genero">Genero de la pelicula: </label>
+        <select id="genero">
+            <option value="Accion">Acccion</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Ciencia ficcion">Ciencia Ficcion</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <button id="botonAgregar">Agregar pelicula</button>
+        <button id="botonVerTodas">Ver todas</button>
+
+<!----------PARTE INICIAL PARA INGRESAR PELICULAS----------------------------------------------->
+
+
+<!------------eliminar pelicula------------------>  
+
+        <label for="posicion">Ingrese numero de pelicula a eliminar: </label>
+        <input type="number" id="posicion">
+        <button id="botonEliminar">Eliminar</button>
+
+<!------------eliminar pelicula------------------> 
+
+
+        <button id="botonNumeradas">Ver numeradas</button>
+
+
+    <h2>LISTA DE PELICULAS</h2>
+
+        <ul id="listaPeliculas">
+
+
+        </ul>
+
+
+        <p id="contadorPeliculas">Total de peliculas: 0</p>
+
+
+        <button id="botonOrdenar">Ordenar alfabeticamente</button>
+
+
+    <script src="logica.js"></script>
+
+</body>
+
+</html>
