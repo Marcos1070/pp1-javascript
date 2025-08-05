@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<h1>Ingresar productos</h1>
+<label for="nombreProducto">Ingrese nombre del producto: </label>    
+<input type="text" id="nombreProducto">
+
+<label for="categoriaProducto">Ingrese la categoria del producto: </label>
+<input type="text" id="categoriaProducto">
+
+<label for="precioProducto">Ingrese el precio del producto: </label>
+<input type="number" id="precioProducto">
+
+<button id="ingresoProductos">Ingresar productos</button>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+
+    <tbody id="tablaProductos">
+
+    </tbody>
+
+</table>
+
+
+<script src="logica.js"></script>
+
+</body>
+
+</html>
